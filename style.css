@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+#menu{position: relative; top:0; left:0; display: block; width:100%;}
+ul{width:100% !important; overflow: auto; padding:0}
+ul:after{content:""; clear:both; display: block;}
+li{width:33.3%; float:left!important; text-align: center; padding:10px 0; box-sizing: border-box;background-color: #eee;}
+
+#main{width:100% !important; margin-left:0; padding:0 !important}
+.waterfall{margin-top:30px; display: inline-block;}
+.sample_table{margin-top: 30px; width: 50%; margin: 0 auto;}
