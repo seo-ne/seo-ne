@@ -3,8 +3,22 @@
 #menu{position: relative; top:0; left:0; display: block; width:100%;}
 ul{width:100% !important; overflow: auto; padding:0}
 ul:after{content:""; clear:both; display: block;}
-li{width:33.3%; float:left!important; text-align: center; padding:10px 0; box-sizing: border-box;background-color: #eee;}
+li{width:33.3%; float:left!important; text-align: center; box-sizing: border-box;background-color: #eee;}
+li a{ padding:10px 0; }
+li a:hover{cursor: pointer;}
 
-#main{width:100% !important; margin-left:0; padding:0 !important}
-.waterfall{margin-top:30px; display: inline-block;}
-.sample_table{margin-top: 30px; width: 50%; margin: 0 auto;}
+#main{width:100%; text-align: center; padding:0; margin:0;}
+#main .content{width:100%; margin-top:20px;}
+#main input{width:200px; height:35px; font-size:0.7em; padding:3px; box-sizing: border-box;}
+#main .preview{
+  width: 80%;
+  min-width: 300px;
+  margin:0 auto;
+  border:1px solid #d8d8d8;
+  margin-top:20px;
+  min-height: 300px;
+  padding:15px;
+  line-height: 1.7
+}
+#main button{padding:6px 12px; border:1px solid #d8d8d8; background:#fff; border-radius: 3px; font-size:0.7em}
+#main button:hover{background: #f8f8f8; cursor: pointer;}

@@ -7,7 +7,7 @@
     <link href="latofonts.css" rel="stylesheet" type="text/css">
     <link href="latostyle.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <style type="text/css"></style>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 </head>
 
 <body>
@@ -34,95 +34,25 @@
         </ul>
     </div>
     <div id="main" style="font-family: 'LatoWeb', -apple-system, system-ui; font-style: normal;">
-        <div class="waterfall">
-            <table class="sample_table">
-                <tbody>
-                    <tr>
-                        <td>14</td>
-                        <td contenteditable="true" class="editable size14">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td contenteditable="true" class="editable size16">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td contenteditable="true" class="editable size18">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td contenteditable="true" class="editable size20">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>24</td>
-                        <td contenteditable="true" class="editable size24">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>36</td>
-                        <td contenteditable="true" class="editable size36">핫샷 (HOTSHOT)</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td contenteditable="true" class="editable size14">Ближайшие события</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td contenteditable="true" class="editable size16">Ближайшие события</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td contenteditable="true" class="editable size18">Ближайшие события</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td contenteditable="true" class="editable size20">Ближайшие события</td>
-                    </tr>
-                    <tr>
-                        <td>24</td>
-                        <td contenteditable="true" class="editable size24">Ближайшие события</td>
-                    </tr>
-                    <tr>
-                        <td>36</td>
-                        <td contenteditable="true" class="editable size36">Ближайшие события</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="display:inline-block; margin-left:100px;">
-              <input id="testbox" type="text">
-              <div id="result" contenteditable="true" class="editable input_text">
-                <button id="preview">Preview</button>
-              </div>
-            </div>
-
-
-            <script>
-
-              window.onload=function() {
-               document.getElementById("preview").onclick=processText;
-              }
-
-              function processText() {
-               var txtBox = document.getElementById("testbox");
-               var lines = txtBox.value.split("\n");
-
-               // generate HTML version of text
-               var resultString  = "<p>";
-               for (var i = 0; i < lines.length; i++) {
-                 resultString += lines[i] + "<br />";
-               }
-               resultString += "</p>";
-
-               // print out to page
-               var   blk   = document.getElementById("result");
-               blk.innerHTML  =  resultString;
-              }
-              </script>
-
+      <div class="content">
+        <input id="viewBox" type="text" value="방탄소년단(BTS)" />
+        <button id="preview" type="button">preview</button>
+        <button id="clear" type="button">clear</button>
+        <div class="preview editable">
         </div>
-        <!-- <div contenteditable="true" class="editable">
-        Бледнёхонький, этом ми утёс, лги, баран стух, пронзятся выстудить суп кого потаскушка хмель, после, унесённый урка. Шваркнутый, сионский заторопившийся миопатия 89
-        </div> -->
+      </div>
     </div>
+    <script>
+    $(document).ready(function(){
+      $('#preview').click(function(){
+        var inputTxt = $('#viewBox').val();
+        $('.preview').append(inputTxt+'</br>');
+      })
+      $('#clear').click(function(){
+        $('.preview').empty();
+      })
+    });
+    </script>
 </body>
 
 </html>
